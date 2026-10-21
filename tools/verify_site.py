@@ -1,6 +1,7 @@
 """Verify the prerendered site only; no render/GIS/network dependencies."""
 from pathlib import Path
 import json,csv,hashlib,collections,re
+from verify_class_values import verify as verify_class_values
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'site'
 def load(p):return json.loads(p.read_text('utf8'))
@@ -36,5 +37,6 @@ def run():
     assert len({f['path'].casefold() for f in catalog})==1956
     assert sum(p.stat().st_size for p in actual.values())<1_000_000_000
     assert max(p.stat().st_size for p in actual.values())<100*1024**2
-    print(json.dumps({'status':'PASS','map_views':views,'geographies':53,'variables':31,'layer_pairs':1643,'scientific_source_catalog':1956,'site_files':len(actual),'site_bytes':sum(p.stat().st_size for p in actual.values()),'max_file_bytes':max(p.stat().st_size for p in actual.values()),'scientific_processing':False},indent=2))
+    derived=verify_class_values(SITE)
+    print(json.dumps({'status':'PASS','map_views':views,'geographies':53,'variables':31,'layer_pairs':1643,'scientific_source_catalog':1956,'site_files':len(actual),'site_bytes':sum(p.stat().st_size for p in actual.values()),'max_file_bytes':max(p.stat().st_size for p in actual.values()),'scientific_processing':False,'derived_class_value_verification':derived},indent=2))
 if __name__=='__main__':run()
