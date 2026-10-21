@@ -1,0 +1,417 @@
+{
+  "schema_version": 2,
+  "display_policy": "map-only-native-four-national-panels-transparent-mask-v1",
+  "geographies": {
+    "NATIONAL": "United States & Puerto Rico",
+    "01": "Alabama",
+    "02": "Alaska",
+    "04": "Arizona",
+    "05": "Arkansas",
+    "06": "California",
+    "08": "Colorado",
+    "09": "Connecticut",
+    "10": "Delaware",
+    "11": "District of Columbia",
+    "12": "Florida",
+    "13": "Georgia",
+    "15": "Hawaii",
+    "16": "Idaho",
+    "17": "Illinois",
+    "18": "Indiana",
+    "19": "Iowa",
+    "20": "Kansas",
+    "21": "Kentucky",
+    "22": "Louisiana",
+    "23": "Maine",
+    "24": "Maryland",
+    "25": "Massachusetts",
+    "26": "Michigan",
+    "27": "Minnesota",
+    "28": "Mississippi",
+    "29": "Missouri",
+    "30": "Montana",
+    "31": "Nebraska",
+    "32": "Nevada",
+    "33": "New Hampshire",
+    "34": "New Jersey",
+    "35": "New Mexico",
+    "36": "New York",
+    "37": "North Carolina",
+    "38": "North Dakota",
+    "39": "Ohio",
+    "40": "Oklahoma",
+    "41": "Oregon",
+    "42": "Pennsylvania",
+    "44": "Rhode Island",
+    "45": "South Carolina",
+    "46": "South Dakota",
+    "47": "Tennessee",
+    "48": "Texas",
+    "49": "Utah",
+    "50": "Vermont",
+    "51": "Virginia",
+    "53": "Washington",
+    "54": "West Virginia",
+    "55": "Wisconsin",
+    "56": "Wyoming",
+    "72": "Puerto Rico"
+  },
+  "variables": {
+    "TOTALPOP": {
+      "name": "Total population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P1_001N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P1.html"
+      ]
+    },
+    "AUND1": {
+      "name": "Population under age 1",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P14_003N+P14_024N",
+      "universe": "Population under 20 years",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P14.html"
+      ]
+    },
+    "A1TO4": {
+      "name": "Population ages 1–4",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P14_004N:P14_007N)+SUM(P14_025N:P14_028N)",
+      "universe": "Population under 20 years",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P14.html"
+      ]
+    },
+    "A5TO17": {
+      "name": "Population ages 5–17",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P14_008N:P14_020N)+SUM(P14_029N:P14_041N)",
+      "universe": "Population under 20 years",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P14.html"
+      ]
+    },
+    "A18TO24": {
+      "name": "Population ages 18–24",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P12_007N:P12_010N)+SUM(P12_031N:P12_034N)",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "AUND25": {
+      "name": "Population under age 25",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P14_003N:P14_020N)+SUM(P14_024N:P14_041N)+SUM(P12_007N:P12_010N)+SUM(P12_031N:P12_034N)",
+      "universe": "Total population ages under 25",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html",
+        "https://api.census.gov/data/2020/dec/dhc/groups/P14.html"
+      ]
+    },
+    "A25OV": {
+      "name": "Population age 25 and older",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P12_011N:P12_025N)+SUM(P12_035N:P12_049N)",
+      "universe": "Total population ages 25 and over",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "A25TO64": {
+      "name": "Population ages 25–64",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P12_011N:P12_019N)+SUM(P12_035N:P12_043N)",
+      "universe": "Total population ages 25 to 64",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "A65TO79": {
+      "name": "Population ages 65–79",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P12_020N:P12_023N)+SUM(P12_044N:P12_047N)",
+      "universe": "Total population ages 65 to 79",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "A80OV": {
+      "name": "Population age 80 and older",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P12_024N+P12_025N+P12_048N+P12_049N",
+      "universe": "Total population ages 80 and over",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "WOMCHILD": {
+      "name": "Female population ages 15–49",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "SUM(P12_030N:P12_039N)",
+      "universe": "Female population ages 15 to 49",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P12.html"
+      ]
+    },
+    "WHITE": {
+      "name": "White alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_002N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "BLACK": {
+      "name": "Black or African American alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_003N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "AMIND": {
+      "name": "American Indian and Alaska Native alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_004N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "ASIAN": {
+      "name": "Asian alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_005N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "HAWPI": {
+      "name": "Native Hawaiian and Other Pacific Islander alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_006N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "OTHER": {
+      "name": "Some other race alone population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_007N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "TWOMORE": {
+      "name": "Two or more races population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P3_008N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P3.html"
+      ]
+    },
+    "NHISP": {
+      "name": "Not Hispanic or Latino population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P4_002N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P4.html"
+      ]
+    },
+    "HISP": {
+      "name": "Hispanic or Latino population",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P4_003N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P4.html"
+      ]
+    },
+    "NHISPWHITE": {
+      "name": "Not Hispanic or Latino, White alone",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P9_005N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P9.html"
+      ]
+    },
+    "NHISPBLACK": {
+      "name": "Not Hispanic or Latino, Black alone",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P9_006N",
+      "universe": "Total population",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P9.html"
+      ]
+    },
+    "HOUSEHOLD": {
+      "name": "Total households",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "P16_001N",
+      "universe": "Households",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/P16.html"
+      ]
+    },
+    "HHPOP": {
+      "name": "Population in occupied housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H8_001N",
+      "universe": "Population in occupied housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H8.html"
+      ]
+    },
+    "HHUNIT": {
+      "name": "Total housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H1_001N",
+      "universe": "Housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H1.html"
+      ]
+    },
+    "OCC": {
+      "name": "Occupied housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H3_002N",
+      "universe": "Occupied housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H3.html"
+      ]
+    },
+    "OWN": {
+      "name": "Owner-occupied housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H10_002N",
+      "universe": "Occupied housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H10.html"
+      ]
+    },
+    "VACANT": {
+      "name": "Vacant housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H3_003N; equivalent observed source H5_001N",
+      "universe": "Housing units; H5 universe is vacant housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H3.html",
+        "https://api.census.gov/data/2020/dec/dhc/groups/H5.html"
+      ]
+    },
+    "HU1P": {
+      "name": "One-person occupied housing units",
+      "area": false,
+      "units": "allocated count per cell",
+      "definition": "H12_003N+H12_011N",
+      "universe": "Occupied housing units",
+      "source_urls": [
+        "https://api.census.gov/data/2020/dec/dhc/groups/H12.html"
+      ]
+    },
+    "PIXEL_LAND": {
+      "name": "Allocated land area",
+      "area": true,
+      "units": "km² per cell",
+      "definition": "SUM by PIXELID of MAX(GEODESIC_KM2(intersection)-GEODESIC_KM2(intersection intersect water mask);0)",
+      "universe": "Grid-cell intersections within processing boundary",
+      "source_urls": []
+    },
+    "PIXEL_WATER": {
+      "name": "Allocated water area",
+      "area": true,
+      "units": "km² per cell",
+      "definition": "SUM by PIXELID of GEODESIC_KM2(intersection intersect water mask)",
+      "universe": "Grid-cell intersections within processing boundary",
+      "source_urls": []
+    }
+  },
+  "layers": {},
+  "layer_partitions": {
+    "TOTALPOP": "assets/data/layers/TOTALPOP.json",
+    "AUND1": "assets/data/layers/AUND1.json",
+    "A1TO4": "assets/data/layers/A1TO4.json",
+    "A5TO17": "assets/data/layers/A5TO17.json",
+    "A18TO24": "assets/data/layers/A18TO24.json",
+    "AUND25": "assets/data/layers/AUND25.json",
+    "A25OV": "assets/data/layers/A25OV.json",
+    "A25TO64": "assets/data/layers/A25TO64.json",
+    "A65TO79": "assets/data/layers/A65TO79.json",
+    "A80OV": "assets/data/layers/A80OV.json",
+    "WOMCHILD": "assets/data/layers/WOMCHILD.json",
+    "WHITE": "assets/data/layers/WHITE.json",
+    "BLACK": "assets/data/layers/BLACK.json",
+    "AMIND": "assets/data/layers/AMIND.json",
+    "ASIAN": "assets/data/layers/ASIAN.json",
+    "HAWPI": "assets/data/layers/HAWPI.json",
+    "OTHER": "assets/data/layers/OTHER.json",
+    "TWOMORE": "assets/data/layers/TWOMORE.json",
+    "NHISP": "assets/data/layers/NHISP.json",
+    "HISP": "assets/data/layers/HISP.json",
+    "NHISPWHITE": "assets/data/layers/NHISPWHITE.json",
+    "NHISPBLACK": "assets/data/layers/NHISPBLACK.json",
+    "HOUSEHOLD": "assets/data/layers/HOUSEHOLD.json",
+    "HHPOP": "assets/data/layers/HHPOP.json",
+    "HHUNIT": "assets/data/layers/HHUNIT.json",
+    "OCC": "assets/data/layers/OCC.json",
+    "OWN": "assets/data/layers/OWN.json",
+    "VACANT": "assets/data/layers/VACANT.json",
+    "HU1P": "assets/data/layers/HU1P.json",
+    "PIXEL_LAND": "assets/data/layers/PIXEL_LAND.json",
+    "PIXEL_WATER": "assets/data/layers/PIXEL_WATER.json"
+  },
+  "source_release": {
+    "name": "USGRIDS_2020_corrected_v1",
+    "manifest_sha256": "829b327fb2950d37c9c3932061d501bd6447ecd4adecdfefe3ed2b4800860cc1"
+  },
+  "publication": {
+    "status": "SCIENTIFIC_REVIEW_PREVIEW_NOT_FINAL_RELEASE",
+    "doi": null,
+    "license": null,
+    "authors": null,
+    "publication_date": null,
+    "repository_registration": "PENDING",
+    "approved_publication_inventory": "PENDING_OWNER_APPROVAL",
+    "scientific_deliverables": 1956
+  }
+}

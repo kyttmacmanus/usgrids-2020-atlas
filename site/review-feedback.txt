@@ -1,0 +1,16 @@
+USGRIDS 2020 — SCIENTIFIC REVIEW FEEDBACK
+
+Category: release-blocking scientific/rights issue | design preference | future enhancement
+Short title:
+Exact explorer URL (including g, v and c):
+Geography / variable / classification:
+Device / browser / viewport, if relevant:
+Observed result:
+Expected result and supporting evidence:
+Scientific interpretation or accessibility impact:
+Suggested correction:
+Reviewer name / date (optional):
+
+Archive citation, creators, affiliations, license and DOI remain pending.
+Share this completed template with the owner through your usual review channel.
+This website does not automatically submit or send your feedback.

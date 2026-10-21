@@ -1,0 +1,4 @@
+* text=auto eol=lf
+site/** -text
+SITE_DEPLOYMENT_MANIFEST.csv -text
+*.webp binary

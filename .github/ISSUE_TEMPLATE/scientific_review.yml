@@ -1,0 +1,30 @@
+name: Scientific atlas review
+description: Report an exact scientific view, release blocker or improvement
+title: "[Review] "
+body:
+  - type: dropdown
+    id: category
+    attributes:
+      label: Review category
+      options:
+        - Release-blocking scientific or rights issue
+        - Design preference
+        - Future enhancement
+    validations:
+      required: true
+  - type: input
+    id: selection
+    attributes:
+      label: Exact explorer URL (include g, v and c)
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Observed result, expected result and supporting evidence
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Scientific impact, suggested correction, device/browser if relevant
