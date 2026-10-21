@@ -1,0 +1,16 @@
+{
+  "source_commit": "d46cfd944233b5f620320eca3ab9238ab908ec5e",
+  "curated_source_json_sha256": "5e44c77bdac0b3a14ee4f7cf07d4f6457a0d8ae89c28fa140d8cdcdbffd3431c",
+  "curated_texts": {
+    "DATA_DICTIONARY.md": "a77ca9e22e37e951490d393fe42ce0a7caa41e1e48940dccac43272b90e96b65",
+    "METHODOLOGY.md": "1dff9d94a960e0871ca5a01b1492bf0835a99b85f8d6727a0fb4190f406686dd",
+    "KNOWN_LIMITATIONS.md": "fadf692912ac7c3bf9463a93dda94abba5099454d8991cca6c1ec1ad2b1e8dde",
+    "GEOSPATIAL_METADATA.md": "b454e08a374d9f134c955a3b9f0dfe807c00a6d84a049ecf650778537576a91a"
+  },
+  "approved_reconciliation_note": {
+    "source_commit": "d46cfd944233b5f620320eca3ab9238ab908ec5e",
+    "source_page": "methods.html#national-reconciliation",
+    "source_fragment_html": "<details class=\"technical-note\" id=\"national-reconciliation\"><summary>National population reconciliation</summary><p>The national allocated population sum differs from the corresponding 2020 Census total by approximately 0.0005%. See the reconciliation documentation for details.</p><p>National allocated TOTALPOP is 334,733,492.4976411, compared with the corresponding 2020 Census benchmark of 334,735,155. The difference is approximately 1,662.5 persons (0.00049666%). National and component allocated totals reconcile with one another. The residual relative to the Census benchmark has no uniquely established cause; it is not definitively attributed to rounding.</p><p>National TOTALPOP has 62,967,001 valid cells; the component valid-cell counts sum to 63,055,358. Their histograms are not interchangeable. The existing national class-value sums were calculated independently from the national rasters, not by adding component class histograms.</p><p>The frozen <code>validation/NATIONAL_RECONCILIATION.csv</code> records zero national-versus-component allocated-total residual. The retained source-conservation documentation records eligibility and allocation-loss qualifications; it does not uniquely apportion the entire national benchmark difference.</p><a class=\"source-link\" href=\"assets/data/scientific-documentation.json\">Reconciliation context and retained technical documentation (JSON) \u2197</a></details>",
+    "source_fragment_sha256": "6389d1a29634acedcc36ea10746af0ed0cafa4543f797869f79109331f4ade1a"
+  }
+}

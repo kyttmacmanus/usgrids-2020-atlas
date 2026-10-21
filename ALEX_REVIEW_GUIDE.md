@@ -42,3 +42,7 @@ Include category, exact selected map or page URL, geography/variable/classificat
 ## Optional technical reading
 
 Methods retains expandable allocation implementation, neutral national reconciliation, and scientific exceptions, plus links to the protected technical records. Zero and format-specific NoData remain distinct. National/component totals reconcile, but their cell histograms differ and the Census benchmark residual has no uniquely established cause. Source coverage and statistics retain cells omitted from national display panels.
+
+GitHub Issues are publicly visible. Please submit confidential concerns about rights, attribution, or unpublished material directly to the dataset authors.
+
+Technical documentation: https://kyttmacmanus.github.io/usgrids-2020-atlas/documentation.html

@@ -17,7 +17,8 @@ def verify(site=None):
         assert hashlib.sha256(data).hexdigest()==expected,rel
     assert len([p for p in lock['assets'] if p.startswith('site/assets/data/class-values/')])==32
     js=(site/'assets/site.js').read_text('utf8');home=js[js.index('function home(){'):js.index('function explorer(){')]
-    assert hashlib.sha256(home.encode()).hexdigest()==lock['homepage_function_sha256'],'Homepage markup changed'
+    approved_home=home.replace("${classificationName('fixed')}",'Fixed count classes')
+    assert hashlib.sha256(approved_home.encode()).hexdigest()==lock['homepage_function_sha256'],'Homepage content/layout changed beyond authorized classification label'
     assert e['authors']==AUTHORS and e['funding']==FUNDING
     assert e['dataset_citation']==PREFIX+e['dataset_title']+' [Dataset, provisional citation]. Center for Integrated Earth System Information (CIESIN), Columbia University. Harvard Dataverse (publication pending).'
     assert e['status']=='PROVISIONAL_OWNER_SELECTED_NOT_ARCHIVE_REGISTERED'

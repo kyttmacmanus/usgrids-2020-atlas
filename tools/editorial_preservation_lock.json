@@ -33,7 +33,6 @@
     "site/assets/data/class-values/VACANT.json": "00fe46a7f61dd6f40e32a21f0dc7a8c4027eef28f6484dd4332ef92772f30fca",
     "site/assets/data/class-values/WHITE.json": "9f3ae90c7e11ddf2405c0bb4b81aeec2b6af2e61a959bd14eb600c62f6d74f97",
     "site/assets/data/class-values/WOMCHILD.json": "12b12f8bbcadb3353275befedc0d63ae32c4982ec6f816fede52a848aa12fcc7",
-    "site/assets/explorer-tools.js": "fc32128a8d24fcd7f74fe65d0158c8be1af86fb6def3ea7482eb67562b500b11",
     "site/assets/explorer.css": "779bf23824e15d54fed3dc6c8f3fad74a732a08dfe8aa85015cac31afe8db0ea",
     "site/assets/site.css": "3324cd6efb49fd4e4ec8890db5a2ffe1807d2226825c1603e9e856cc72d9cf36",
     "site/assets/brand/logo-horizontal.svg": "6db0c065dc8b93cca2519474e7f21ca1a93d3760d16b090f40c36f08e0faaf3b",
@@ -41,5 +40,12 @@
     ".github/workflows/pages-review.yml": "ce018d42afbbebdde2de28222874453207f473fb2aa2451b5933f0e518693cda"
   },
   "homepage_function_sha256": "8c29771d3d9ddd1f585288aa01dc31f4743503b27ecf89b7af0eda76ea77578a",
-  "workflow_line_endings": "Compare Git-normalized LF bytes only for workflow text; site scientific/presentation files use exact raw bytes."
+  "workflow_line_endings": "Compare Git-normalized LF bytes only for workflow text; site scientific/presentation files use exact raw bytes.",
+  "authorized_presentation_revisions": {
+    "site/assets/explorer-tools.js": {
+      "baseline_sha256": "fc32128a8d24fcd7f74fe65d0158c8be1af86fb6def3ea7482eb67562b500b11",
+      "authority": "Owner usability/visual refinement brief 21 October 2026: selection actions, default distribution, terminology and shared help; original scientific inputs and verification math retained."
+    }
+  },
+  "homepage_label_exception": "Only replace the original Fixed count classes label with classificationName('fixed'); hero, map composition and scientific content remain byte-equivalent after this single normalization."
 }

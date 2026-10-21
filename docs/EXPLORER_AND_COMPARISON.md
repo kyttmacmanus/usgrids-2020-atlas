@@ -1,18 +1,18 @@
 # Explorer distributions and comparison view
 
-The explorer uses the original map images, 31 immutable layer partitions and their original classification records. The homepage and vector identity are retained. `Compare maps side by side` opens `compare.html`; no map service, raster arithmetic or new framework is used.
+The explorer uses the original map images, 31 immutable layer partitions and their original classification records. The homepage and vector identity are retained. The secondary `Compare maps` action opens `compare.html` with the current selection in Map A and a sensible second geography. `Find data for this map` opens the selected GeoTIFF/NetCDF catalog entries and preserves map classification/distribution for return. No map service, raster arithmetic or new framework is used.
 
 ## Classifications
 
-The user-facing name **Global positive quintiles** corresponds to the unchanged `shared` mode, image names and record identities. `c=shared` remains valid; `c=global` is accepted and canonicalized to `shared`. The same aliases work for `c1` and `c2` on comparisons.
+The user-facing name **Global quintiles** corresponds to the unchanged `shared` mode, image names and record identities. `c=shared` remains valid; `c=global` is accepted and canonicalized to `shared`. The same aliases work for `c1` and `c2` on comparisons.
 
-Fixed count classes use the existing predetermined numeric boundaries. Local positive quintiles use positive values within one geography. Global positive quintiles use pooled positive values from the 52 geographic components; the national composite is excluded from fitting. Global denotes the USGRIDS study domain, not the world. Valid zero and NoData remain separate.
+Fixed classes use the existing predetermined numeric boundaries. Local quintiles use positive values within one geography. Global quintiles use pooled positive values from the 52 geographic components; the national composite is excluded from fitting. Global denotes the USGRIDS study domain, not the world. Valid zero and NoData remain separate. Tied values can yield fewer than five distinct positive classes; this meaning is retained in the contextual classification explanation.
 
 The two area variables retain their existing Local and Global classifications. No validated fixed area thresholds exist; none have been invented. The information control explains this distinction. It opens on hover, click, Enter/Space and touch; Escape closes it. Popups stay within the viewport.
 
 ## Two distributions
 
-`Grid cells` is the default. It shows each class's exact valid-cell count and percentage of all valid cells. `Allocated values` shows the actual original Float64 values summed within each class and the percentage of the total valid allocated value. Switching views retains the map selection. The `d=values` parameter can retain the value view on refresh.
+Allocated values are the default, with variable-aware labels: `Allocated population`, `Allocated households`, `Allocated housing units`, `Allocated land area` or `Allocated water area`. The graph shows actual original Float64 values summed within each class and the percentage of the total valid allocated value. `Grid cells` remains available with exact valid-cell counts and shares. Switching views retains the map selection. Explicit `d=values` and `d=cells` states persist on refresh and history navigation; links without a distribution parameter open the value view. Missing or invalid verified summaries select Grid cells with a clear availability notice and never fabricate values.
 
 Units are allocated persons for demographic/occupied-housing population variables, allocated households for HOUSEHOLD, allocated housing units for HHUNIT/OCC/OWN/VACANT/HU1P, and km² for the two area variables. Valid zero has its real cell frequency and an allocated-value sum of zero. NoData is excluded from both distributions; its exact count remains in expandable provenance. If an allocated total is zero, its value percentages are undefined rather than fabricated as percentages.
 
@@ -22,7 +22,7 @@ Values are never estimated from preview pixels, counts, midpoint approximations 
 
 All available modes are classified in the same deterministic raster pass, with bounded 1024×1024 windows, native masked reads, Float64 boundaries and original interval semantics. No positive Alaska NoData sentinel is treated as data. NumPy pairwise Float64 block sums are combined with `math.fsum`; the predeclared reconciliation bound is `abs(error) <= 1e-9 + 1e-12*abs(reference total)`, matching the existing frozen total-reconciliation policy. Every bin count must match the authoritative histogram exactly. Unexplained mismatches stop processing and are never published as verified values.
 
-The separate private process checkpoints each completed geography-variable raster, including source hash, file state, input signature, grid, units, original classification IDs, counts, full-precision sums and verification results. A single-process lock prevents duplicate writers. A compatible restart reuses verified checkpoints; it does not reacquire or regenerate inputs. The generator, restart commands, pilot evidence and resource measurements are supplied in the review handback rather than publishing private processing files.
+The completed prior analysis checkpointed each geography-variable raster, including source hash, file state, input signature, grid, units, original classification IDs, counts, full-precision sums and verification results. Its restart and pilot evidence remains in the prior review handback. This visual/usability refinement reuses those verified results unchanged; it does not rerun that process or publish private processing files.
 
 The pilot gate precedes full production and covers Delaware and Puerto Rico TOTALPOP, Hawaii HAWPI, Delaware land and water, Alaska TOTALPOP, and the actual national population, land and water rasters. Pilots independently reproduce interval membership with direct predicates and `math.fsum` of original values.
 
