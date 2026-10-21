@@ -1,16 +1,18 @@
 USGRIDS 2020 — SCIENTIFIC REVIEW FEEDBACK
 
-Category: release-blocking scientific/rights issue | design preference | future enhancement
+Review category: release-blocking scientific/rights issue | usability/design concern | future enhancement
 Short title:
-Exact explorer URL (including g, v and c):
-Geography / variable / classification:
+Page or feature: Explorer | Compare Maps | Methods | Data Access | Scientific Review Guide | other
+Exact selected map or page URL (include g/v/c or both comparison selections where relevant):
+Geography / variable / classification, if relevant:
 Device / browser / viewport, if relevant:
 Observed result:
-Expected result and supporting evidence:
-Scientific interpretation or accessibility impact:
+Expected behavior:
+Scientific or usability impact:
+Supporting evidence (screenshot, source reference or steps to reproduce):
 Suggested correction:
 Reviewer name / date (optional):
 
-Archive citation, creators, affiliations, license and DOI remain pending.
+Proposed dataset citation available; Harvard Dataverse publication and DOI pending.
 Share this completed template with the owner through your usual review channel.
 This website does not automatically submit or send your feedback.

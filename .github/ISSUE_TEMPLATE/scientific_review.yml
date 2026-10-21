@@ -1,5 +1,5 @@
 name: Scientific atlas review
-description: Report an exact scientific view, release blocker or improvement
+description: Review maps, comparisons, methods, data access or documentation
 title: "[Review] "
 body:
   - type: dropdown
@@ -8,23 +8,47 @@ body:
       label: Review category
       options:
         - Release-blocking scientific or rights issue
-        - Design preference
+        - Usability/design concern
         - Future enhancement
+    validations:
+      required: true
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Page or feature
+      options:
+        - Explorer
+        - Compare Maps
+        - Science & Methods
+        - Data Access
+        - Scientific Review Guide
+        - Other
     validations:
       required: true
   - type: input
     id: selection
     attributes:
-      label: Exact explorer URL (include g, v and c)
+      label: Exact selected map or page URL
+      description: For maps, copy the full URL after selecting geography, variable and classification. Comparisons should identify both panels.
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
-      label: Observed result, expected result and supporting evidence
+      label: Observed and expected behavior
+      description: Tell us what happened, what you expected, and how to reproduce it.
     validations:
       required: true
   - type: textarea
     id: context
     attributes:
-      label: Scientific impact, suggested correction, device/browser if relevant
+      label: Scientific or usability impact, evidence and suggested correction
+      description: Screenshots or references help. Include device/browser details if relevant.
+  - type: input
+    id: selection_context
+    attributes:
+      label: Geography, variable and classification (if relevant)
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer and date (optional)

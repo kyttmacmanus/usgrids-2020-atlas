@@ -1,16 +1,44 @@
-# Alex — USGRIDS 2020 scientific atlas review
+# USGRIDS 2020 — scientific atlas review
 
-Use the confirmed live URL supplied by the owner when deployment has been approved and tested. Begin at review.html, then choose a linked view. No installation is needed. The full site has 53 geographies, 31 variables and 4,823 views; it is not the earlier 60-view sample. Live availability is recorded separately and is not asserted by this guide.
+Start at https://kyttmacmanus.github.io/usgrids-2020-atlas/review.html. The atlas includes 53 geographic selections, 31 scientific variables and 4,823 existing map views. No installation is needed.
 
-Start with national TOTALPOP (fixed), Alaska TOTALPOP (local positive quintiles), Delaware TOTALPOP (fixed), Puerto Rico TOTALPOP (fixed), national PIXEL_LAND (local) and PIXEL_WATER (shared). Then inspect Hawaiian HAWPI, Puerto Rico AMIND, national WOMCHILD and BLACK. Each starting link includes g, v and c. Change classification to compare views, then copy the full resulting URL for feedback.
+## Suggested starting points
 
-1. **Scientific accuracy and interpretation.** Confirm allocated counts versus density/point observations, fractional counts, area units, 15-arc-second angular grid, and valid zero versus format-specific NoData. Values are validated corrected-candidate estimates, with explicit exceptions rather than a claim of universal historical identity.
-2. **Classification and color.** Check exact fixed thresholds, positive-only local/shared quantiles, shared 52-component scope, tied-boundary collapse, numeric legends and full-resolution frequency denominators. Check contrast and sparse surfaces; preview reduction must not be mistaken for analysis data.
-3. **Geographic framing.** Assess Alaska and Hawaii insets, panel scales and national omissions of northwestern Hawaiian Islands/western Aleutians. Those omissions are display-only; source statistics retain every scientific source cell. Test desktop and a phone-sized screen.
-4. **Methods and limitations.** Assess canonical definitions, Alaska Path B/coherent reconstructed area weights, localized historical differences, and the three exact approved Puerto Rico allocation-loss exceptions. Identify any overstatement or missing uncertainty.
-5. **Data accessibility and structure.** Check the scientific-identity catalog, 29 count + two area variables, TIFF/NetCDF relationships and complete five-component block Shapefile sets. Repository downloads are pending; there should be no dead download link or claim of deposit.
-6. **Citation, attribution and affiliations.** Review proposed CIESIN terminology and identify required decisions. Creator order, individual roles, actual contact/producer, funding, rights/license and DOI are not approved by this preview. Do not assume institutional precedent settles this release.
-7. **Necessary corrections.** Flag issues affecting scientific correctness, provenance, privacy/rights, misleading attribution, missing data or basic access as potential release blockers. Give evidence and an exact view URL.
-8. **Future enhancements.** Keep aesthetic preferences and post-release features separate from blockers. State the reader benefit, rather than changing scientific bins or requiring map regeneration for typography.
+Core cases: national TOTALPOP (Fixed), Alaska TOTALPOP (Local), Puerto Rico TOTALPOP (Fixed), national PIXEL_LAND (Local), and national PIXEL_WATER (Global).
 
-Feedback: use the working site/review-feedback.txt download or the review page's template link. Record category (release-blocking scientific/rights issue, design preference, or future enhancement), exact URL, selection, observed/expected result and supporting evidence. Return it to the owner through the usual review channel. If the confirmed repository later enables Issues, the included Scientific atlas review issue form accepts the same fields; an unverified Issues URL is deliberately not presented. This preparation sends no invitation or feedback automatically.
+Additional cases: Delaware TOTALPOP, Hawaii HAWPI, Puerto Rico AMIND, national WOMCHILD and national BLACK. The public guide supplies their exact geography/variable/classification links.
+
+Use [Compare Maps](https://kyttmacmanus.github.io/usgrids-2020-atlas/compare.html) to compare two selections. Common Fixed or Global numeric boundaries support comparison of the same variable and units. Local classes may use different thresholds; different variables retain separate legends, units and universes. Equal panel sizes do not imply equal geographic scales.
+
+## Review criteria
+
+1. Scientific interpretation: allocation assumptions, fractional values, units, statistics, classification and limitations.
+2. Cartographic presentation: geographic framing, insets, colors, legends and readability.
+3. Documentation and data access: definitions, methods, provenance, grouped catalog and scientific file information.
+4. Usability: navigation, selectors, comparison, mobile use and accessibility.
+
+Distinguish release-blocking scientific or rights issues, usability/design concerns, and future enhancements. Reviewers are not expected to repeat internal raster-validation jobs.
+
+## Citation, publication and support
+
+Proposed dataset citation available; Harvard Dataverse publication and DOI pending. No DOI has been assigned by this preview. Proposed dataset authors, in owner-selected order: Kytt MacManus; Hieu Tran; Juan Martinez; Alex de Sherbinin; Greg Yetman.
+
+MacManus, K., Tran, H., Martinez, J., de Sherbinin, A., & Yetman, G. (2026). USGRIDS 2020: Gridded 2020 U.S. Census Demographic and Housing Counts and Land/Water Area at 15-Arc-Second Resolution [Dataset, provisional citation]. Center for Integrated Earth System Information (CIESIN), Columbia University. Harvard Dataverse (publication pending).
+
+The atlas has a separate suggested citation:
+
+MacManus, K. (2026). USGRIDS 2020 Scientific Atlas [Interactive web atlas, scientific review preview]. Center for Integrated Earth System Information (CIESIN), Columbia University. https://kyttmacmanus.github.io/usgrids-2020-atlas/
+
+The proposed 2026 citation year is provisional; the source data vintage is 2020. Final archive registration, version and license are not claimed.
+
+The preparation, validation, and dissemination of USGRIDS 2020 were supported in part by the Columbia University Research Stabilization Fund (Round 2).
+
+## Actionable feedback
+
+Use [Submit feedback through GitHub](https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=scientific_review.yml) (account required), or [download the feedback template](https://kyttmacmanus.github.io/usgrids-2020-atlas/review-feedback.txt) and share it through your own channel without a GitHub sign-in.
+
+Include category, exact selected map or page URL, geography/variable/classification where relevant, observed and expected behavior, scientific/usability impact, supporting evidence and suggested correction. Reviewer/date are optional. Neither downloading nor filling in the template sends it automatically. No invitation or reviewer notification is sent by this update.
+
+## Optional technical reading
+
+Methods retains expandable allocation implementation, neutral national reconciliation, and scientific exceptions, plus links to the protected technical records. Zero and format-specific NoData remain distinct. National/component totals reconcile, but their cell histograms differ and the Census benchmark residual has no uniquely established cause. Source coverage and statistics retain cells omitted from national display panels.
