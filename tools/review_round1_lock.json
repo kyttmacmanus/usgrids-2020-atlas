@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "7b04b27bfaedc5e4688f48cd3f54f6a90b9432fb",
+  "retained_fragments": {
+    "technical_bullets": {
+      "pattern": "<summary>Technical implementation</summary>.*?</details>",
+      "sha256": "5d2964c54d3c925349903ad1e458b4c53724c7cf8590a8ea84de5145c419feaf"
+    },
+    "national_reconciliation": {
+      "pattern": "<details class=\"technical-note\" id=\"national-reconciliation\">.*?</details>",
+      "sha256": "c81e35da6f9686a6b76d1577f1f67c58d56b791c7cd625a63409d4b17ef6afc6"
+    },
+    "historical_exceptions": {
+      "pattern": "<details class=\"technical-note\" id=\"correction\">.*?</details>",
+      "sha256": "f593c740a7780496e072508b927bcb8ff81e95d503cf0a1583572497b8a93df7"
+    },
+    "conceptual_allocation": {
+      "pattern": "<p>USGRIDS 2020 allocates Census block-level.*?</dl><p class=\"editorial-help\">.*?</p>",
+      "sha256": "4f755ebeed48b4b147b3c1f8b269245fbd1f9def46e1e2a26ad7e8ef4f7b0868"
+    }
+  }
+}

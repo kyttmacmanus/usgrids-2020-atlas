@@ -1,0 +1,24 @@
+# Alpha review feedback, round 1
+
+22 October 2026. Reviewer: Juan Martinez. Baseline: `7b04b27bfaedc5e4688f48cd3f54f6a90b9432fb`.
+
+Original feedback: [GitHub Issue #1, methods page](https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/1), opened by `jfmartinez4` on 21 October 2026. The original issue body, title, category and comments are preserved; this implementation does not edit, respond to or close the issue. The private review evidence includes the original read-only issue snapshot. The issue's selected category remains the reviewer's original category; acceptance remains an owner/reviewer decision.
+
+| Origin | Comment or request | Scoped response |
+| --- | --- | --- |
+| Issue #1 | Variable names are difficult to identify; improve labels or type hierarchy. | Each Methods dictionary entry explicitly labels Variable name, Variable code and Definition. Names use a readable heading; codes use a separate monospaced chip; source expressions remain separately labeled and monospaced. The readable technical dictionary also distinguishes its name/code/expression columns typographically. All names, codes, expressions, definitions and universes are unchanged. |
+| Issue #1 | Introduce the technical implementation bullets; consider readers new to the method. | A short paragraph outside the expandable technical section relates its steps to the conceptual area-weighted allocation. The existing plain-language explanation, equation and workflow remain visible; every technical bullet and qualification is retained. |
+| Owner's round-one brief | Distinguish white valid-zero cells from transparent NoData. | The same light blue-gray `#E1E5E8` backdrop appears behind existing map images on Home, Explorer and both comparison panels, including mobile national compositions. A short display note explains that background also extends outside mapped coverage and is not a measured value. No scientific pixels, masks, swatches, legends, thresholds or map geometry change. Alaska, Puerto Rico, Delaware and the national composite are checked with before/after views. |
+| Owner's round-one brief | State territorial coverage and distinguish the Island Areas data products. | A Geographic scope note under Known Limitations identifies the 50 states, DC and Puerto Rico, and the four excluded Island Areas. It distinguishes standard DHC inputs from separately published Island Areas Census products, including their separate DHC file. No Island Areas processing or availability is implied. |
+
+Coverage wording was checked against the Census Bureau's [2020 Census Results](https://www.census.gov/programs-surveys/decennial-census/decade/2020/2020-census-results.html), which separates the states/DC/Puerto Rico products from the Island Areas, and [2020 Island Areas Censuses Data Products](https://www.census.gov/programs-surveys/decennial-census/decade/2020/planning-management/release/2020-island-areas-data-products.html), which identifies American Samoa, Guam, the Commonwealth of the Northern Mariana Islands and the U.S. Virgin Islands and their distinct products. Checked 22 October 2026.
+
+The CSS backdrop is a display aid, not an ocean, land, boundary or NoData dataset. The entire rectangular frame is tinted; white valid-zero pixels remain white, transparent pixels reveal the backdrop, and opaque scientific class pixels are unchanged. Image transparency alone is not used to infer new scientific masks or classifications.
+
+Scientific verification remains `python tools/verify_site.py`. The round-one verifier checks unchanged scientific assets and exact retained technical/reconciliation fragments. Browser evidence, contrast/compositing checks and before/after/live screenshots accompany the private handback. No raster rendering, scientific processing or Harvard Dataverse release is performed. The exact-commit Pages workflow and public-visibility/environment safeguards remain unchanged.
+
+## Suggested issue response for owner review
+
+Draft to post only after the owner has reviewed the deployment; no response is sent automatically:
+
+> Thanks, Juan. The dictionary now explicitly labels the variable name, variable code and definition, with distinct typography for codes and Census expressions. A short introduction now connects the technical implementation steps to the conceptual allocation method. The detailed bullets remain expandable, and the main explanation and equation remain readable without opening them. Scientific definitions, source expressions, maps and statistics are unchanged. The same review update also adds a consistent map backdrop and a Census-sourced geographic-scope note requested in the owner's round-one brief. Please take another look at [Science & Methods](https://kyttmacmanus.github.io/usgrids-2020-atlas/methods.html). We are leaving this issue open for your review.

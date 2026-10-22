@@ -29,6 +29,7 @@ function bindInformationControls(root=document){
  }
 }
 function distributionLabel(variable){return variable==='PIXEL_LAND'?'Allocated land area':variable==='PIXEL_WATER'?'Allocated water area':variable==='HOUSEHOLD'?'Allocated households':['HHUNIT','OCC','OWN','VACANT','HU1P'].includes(variable)?'Allocated housing units':'Allocated population';}
-function initRefinementTools(){bindInformationControls();if(pageName==='documentation'){
+function initRefinementTools(){bindInformationControls();
+ document.querySelectorAll('.hero-map .map-caption,#map-note,#panel-a-note,#panel-b-note').forEach(caption=>{if(caption.nextElementSibling?.classList.contains('map-display-note'))return;const note=document.createElement('p');note.className='map-display-note';note.textContent='Display background only: valid-zero cells are white; NoData is transparent. The gray backdrop also extends outside mapped coverage and does not represent measured values.';caption.after(note);});if(pageName==='documentation'){
  const search=document.getElementById('documentation-search');search.addEventListener('input',()=>{const query=search.value.trim().toLowerCase();let count=0;document.querySelectorAll('.documentation-toc a').forEach(link=>{link.hidden=!link.textContent.toLowerCase().includes(query);if(!link.hidden)count++;});document.getElementById('documentation-search-status').textContent=count+' matching sections';});
 }}

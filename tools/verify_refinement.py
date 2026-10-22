@@ -69,7 +69,7 @@ def verify(site=None):
     assert ''.join(''.join(expected.parts).split())==''.join(''.join(parsed.reconciliation).split())
     assert all(id in parsed.ids for id in ['methodology','data-dictionary','geospatial-metadata','known-limitations','validation-reconciliation','methodology-validation-policy'])
     assert sum(id.startswith('doc-var-') for id in parsed.ids)==31
-    pairs=[('body','#29334B','#FAF7F3',4.5),('secondary text','#5B5E68','#FAF7F3',4.5),('interactive plum','#77395B','#FAF7F3',4.5),('filled button','#FAF7F3','#77395B',4.5),('dark band','#FAF7F3','#29334B',4.5),('map caption/label','#5B5E68','#EEEAE5',4.5),('control border','#817985','#FAF7F3',3),('gold accent on dark band','#D2A15E','#29334B',3)]
+    pairs=[('body','#29334B','#FAF7F3',4.5),('secondary text','#5B5E68','#FAF7F3',4.5),('interactive plum','#77395B','#FAF7F3',4.5),('filled button','#FAF7F3','#77395B',4.5),('dark band','#FAF7F3','#29334B',4.5),('map caption/label','#5B5E68',re.search(r'--map-panel:(#[0-9A-Fa-f]{6})',css).group(1),4.5),('control border','#817985','#FAF7F3',3),('gold accent on dark band','#D2A15E','#29334B',3)]
     ratios=[{'role':name,'foreground':fg,'background':bg,'ratio':contrast(fg,bg),'minimum':minimum,'status':'PASS' if contrast(fg,bg)>=minimum else 'FAIL'} for name,fg,bg,minimum in pairs];assert all(p['status']=='PASS' for p in ratios)
     for p in site.glob('*.html'):
         page=p.read_text('utf8');assert page.count('assets/refinement.js?')==1 and page.count('assets/refinement.css?')==1

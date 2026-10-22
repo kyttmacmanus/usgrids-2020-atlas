@@ -1,5 +1,5 @@
 /* Approved interface palette. Scientific image pixels, --swatch colors and bars are never recolored. */
-:root{--paper:#FAF7F3;--ink:#29334B;--accent:#77395B;--gold:#D2A15E;--muted:#5B5E68;--line:#D8D3D4;--map-panel:#EEEAE5;--control-border:#817985}
+:root{--paper:#FAF7F3;--ink:#29334B;--accent:#77395B;--gold:#D2A15E;--muted:#5B5E68;--line:#D8D3D4;--map-panel:#E1E5E8;--control-border:#817985}
 body{color:var(--ink);background:var(--paper)}
 .review-notice{background:#F0ECEF}.review-notice .text-link{color:var(--accent)}
 .site-nav a:hover,.site-nav a[aria-current=page]{border-color:var(--accent);color:var(--accent)}
@@ -18,3 +18,14 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,
 @media(max-width:1100px){.context-grid{gap:25px}.context-grid h2{font-size:23px}.context-grid>div{padding-left:15px}.compare-legend li{font-size:11px}.frequency-label{font-size:11px}}
 @media(max-width:800px){.context-grid h2{font-size:22px}.context-grid p{font-size:13px}.hero-map .map-frame{outline-offset:5px}.compare-panel .legend-heading{margin-top:20px}.legend li{font-size:12px}}
 @media(max-width:600px){.context-grid h2{font-size:25px}.context-grid p{font-size:14px}.context-grid>div{padding-left:18px}.hero-map .map-caption{font-size:11px}.home-legend>p,.mini-legend span{font-size:11px}.map-label,.region-label{font-size:9px}.explorer-actions{gap:9px}.secondary-action{font-size:12px;padding:10px 13px}.legend-title{font-size:25px}.frequency-label{font-size:12px}.frequency .axis-note,.frequency-footnote{font-size:12px}.info-control>summary{width:36px;height:36px}.info-control .info-popover{width:340px;padding:18px}.doc-record h2{font-size:30px}.doc-record h3{font-size:25px}.doc-source-content p,.doc-source-content li{font-size:14px}.doc-table th,.doc-table td{padding:10px}.compare-guidance-help{align-items:flex-start}.source-link,.text-link{font-size:12px}}
+
+/* Alpha review round 1: backdrop only; source image pixels and scientific swatches remain unchanged. */
+.map-frame{background:var(--map-panel)}
+.map-display-note{font-size:11px;line-height:1.75;color:var(--muted);margin:10px 0 18px;max-width:95ch}
+.editorial-page .dictionary-entry .dictionary-field-label{font:700 11px/1.6 var(--sans);color:var(--muted);letter-spacing:.25px;margin:0 0 5px}
+.editorial-page .dictionary-entry h3.variable-name{font-size:21px;line-height:1.35;margin:0 0 14px;overflow-wrap:anywhere}
+.editorial-page .dictionary-entry .variable-code{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font:12px/1.6 var(--sans);color:var(--muted)}
+.editorial-page .dictionary-entry .variable-code code{display:inline-block;font:13px/1.5 ui-monospace,Consolas,monospace;color:var(--ink);background:#F0ECEF;border:1px solid var(--line);padding:3px 7px;overflow-wrap:anywhere}
+.editorial-page .dictionary-entry .definition-list dt{font-weight:600;text-transform:none;letter-spacing:0}
+.technical-intro{font-size:14px;line-height:1.8;margin-top:24px}.coverage-scope{margin:22px 0}.coverage-scope h3{font-size:24px}
+.dictionary-table td:nth-child(2){font-weight:600}.dictionary-table td:first-child code{font-size:12px;font-weight:600}.dictionary-table td:nth-child(3) code{font-size:11px;font-weight:400}

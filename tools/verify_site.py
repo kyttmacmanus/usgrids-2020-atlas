@@ -4,6 +4,7 @@ import json,csv,hashlib,collections,re
 from verify_class_values import verify as verify_class_values
 from verify_editorial import verify as verify_editorial
 from verify_refinement import verify as verify_refinement
+from verify_review_round1 import verify as verify_review_round1
 ROOT=Path(__file__).resolve().parents[1]
 SITE=ROOT/'site'
 def load(p):return json.loads(p.read_text('utf8'))
@@ -42,5 +43,6 @@ def run():
     derived=verify_class_values(SITE)
     editorial=verify_editorial(SITE)
     refinement=verify_refinement(SITE)
-    print(json.dumps({'status':'PASS','map_views':views,'geographies':53,'variables':31,'layer_pairs':1643,'scientific_source_catalog':1956,'site_files':len(actual),'site_bytes':sum(p.stat().st_size for p in actual.values()),'max_file_bytes':max(p.stat().st_size for p in actual.values()),'scientific_processing':False,'derived_class_value_verification':derived,'editorial_verification':editorial,'refinement_verification':refinement},indent=2))
+    round1=verify_review_round1(SITE)
+    print(json.dumps({'status':'PASS','map_views':views,'geographies':53,'variables':31,'layer_pairs':1643,'scientific_source_catalog':1956,'site_files':len(actual),'site_bytes':sum(p.stat().st_size for p in actual.values()),'max_file_bytes':max(p.stat().st_size for p in actual.values()),'scientific_processing':False,'derived_class_value_verification':derived,'editorial_verification':editorial,'refinement_verification':refinement,'review_round1_verification':round1},indent=2))
 if __name__=='__main__':run()
