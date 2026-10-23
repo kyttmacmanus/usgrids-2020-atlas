@@ -15,6 +15,8 @@ def verify(site=None):
  css=(site/'assets/refinement.css').read_text('utf8');assert '--map-panel:#E1E5E8' in css and '.map-frame{background:var(--map-panel)}' in css
  shared=(site/'assets/refinement.js').read_text('utf8');assert 'also extends outside mapped coverage and does not represent measured values' in shared
  for p in site.glob('*.html'):
-  for asset in ['editorial.js','refinement.js','refinement.css','site.js']:assert 'assets/'+asset+'?v=alpha-round1-20261022a' in p.read_text('utf8'),(p,asset)
+  for asset in ['editorial.js','refinement.js','refinement.css','site.js']:
+   version='label-align-20261022a' if asset in ['refinement.css','site.js'] else 'alpha-round1-20261022a'
+   assert 'assets/'+asset+'?v='+version in p.read_text('utf8'),(p,asset)
  return {'status':'PASS','baseline_commit':lock['baseline_commit'],'technical_bullets_and_qualifications_unchanged':True,'conceptual_allocation_explanation_unchanged':True,'national_reconciliation_unchanged':True,'historical_exceptions_unchanged':True,'dictionary_presentation_only':True,'census_coverage_sources_linked':True,'consistent_map_backdrop':'#E1E5E8','scientific_processing':False}
 if __name__=='__main__':print(json.dumps(verify(),indent=2))

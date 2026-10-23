@@ -29,3 +29,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,
 .editorial-page .dictionary-entry .definition-list dt{font-weight:600;text-transform:none;letter-spacing:0}
 .technical-intro{font-size:14px;line-height:1.8;margin-top:24px}.coverage-scope{margin:22px 0}.coverage-scope h3{font-size:24px}
 .dictionary-table td:nth-child(2){font-weight:600}.dictionary-table td:first-child code{font-size:12px;font-weight:600}.dictionary-table td:nth-child(3) code{font-size:11px;font-weight:400}
+
+/* Give the first national heading a clear line above the image; inset positions stay unchanged. */
+.national-plate>.map-surface>.map-label:first-of-type{top:0!important;transform:translateY(calc(-100% - 2px))}
+.hero-map .national-plate>.map-surface>.map-label:first-of-type{transform:translateY(calc(-100% - 14px))}
