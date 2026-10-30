@@ -31,6 +31,7 @@ def verify(site=None):
  source_lock=load(ROOT/'tools/documentation_source_lock.json');records=load(source)
  for name,digest in source_lock['curated_texts'].items():assert hashlib.sha256(records[name]['text'].encode()).hexdigest()==digest
  before=(site/'documentation.html').read_bytes()
+ assert b'\r\n' not in before,'Generated documentation must use platform-independent LF bytes'
  subprocess.run([sys.executable,str(ROOT/'tools/build_readable_documentation.py')],check=True,capture_output=True)
  assert (site/'documentation.html').read_bytes()==before,'Stale generated documentation'
  return {'status':'PASS','release_decision':'EXCLUDED; no replacement','canonical_variables':31,'WOMCHILD_retained':True,'curated_records_preserved':4,'generated_documentation_current':True,'cache_references_updated':True,'scientific_processing':False}
