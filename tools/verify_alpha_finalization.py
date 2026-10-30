@@ -18,9 +18,10 @@ def verify(site=None):
  assert 'Exact class boundaries' in helper and 'm.edges[i+1]' in helper
  assert 'Different geographic scales:' in helper and helper.index('comparison-scale-note')<helper.index('<div class="compare-grid">')
  assert 'Apparent map size should not be used to compare geographic extent or the magnitude of values.' in helper
- assert lock['historical_definition_clarification']['after'] in editorial
- assert 'does not establish that the two variable names originally represented the same demographic concept' in editorial
- assert 'source definition has not been verified' in editorial
+ closure=load(ROOT/'tools/femw18child_closure_lock.json');historical_editorial=editorial.replace(closure['methods_after'],closure['methods_before'])
+ assert lock['historical_definition_clarification']['after'] in historical_editorial
+ assert 'does not establish that the two variable names originally represented the same demographic concept' in historical_editorial
+ assert 'source definition has not been verified' in historical_editorial
  assert 'FEMW18CHILD' not in editorial[editorial.index('function editorialMethods'):editorial.index('id="correction"')]
  feedback=editorial[editorial.index('function editorialFeedback'):editorial.index('async function initEditorialTools')]
  for anchor in ['feedback','review-criteria','review-publication']:assert 'id="'+anchor+'"' in feedback
@@ -39,7 +40,7 @@ def verify(site=None):
   context=template.split('id: selection_context')[1].split('  - type:')[0];assert 'required: true' not in context
  for name in ['index','explore','compare','data','methods','documentation','feedback','review']:
   html=(site/(name+'.html')).read_text('utf8');assert 'Scientific Review Preview' not in re.search(r'<title>.*?</title>',html)[0]
-  for asset in ['site.js','editorial.js','explorer-tools.js','refinement.js','refinement.css']:assert asset+'?v=alpha-final-20261030a' in html
+  for asset in ['site.js','editorial.js','explorer-tools.js','refinement.js','refinement.css']:assert asset+'?v='+('fem-closure-20261030a' if asset in ['editorial.js','site.js'] else 'alpha-final-20261030a') in html
  assert 'data-page="review"' in (site/'review.html').read_text('utf8')
  assert 'data-page="feedback"' in (site/'feedback.html').read_text('utf8')
  return {'status':'PASS','canonical_variables':31,'geographies':53,'WOMCHILD_definition_verified':True,'historical_concept_equivalence_not_claimed':True,'navigation_order':['Home','Explore Maps','Data Access','Science & Methods'],'legacy_page_and_issue_template_preserved':True,'feedback_public_visibility_and_account_disclosed':True,'publication_status_qualified':True,'map_processing':False}

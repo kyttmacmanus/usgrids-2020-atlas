@@ -52,7 +52,7 @@ async function ensureEditorialAssets(){
  const pending=[];
  if(typeof informationControl!=='function')pending.push(new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='assets/refinement.js?v=alpha-final-20261030a';script.onload=resolve;script.onerror=()=>reject(Error('Contextual help unavailable'));document.head.append(script);}));
  if(!document.querySelector('link[href^="assets/refinement.css"]'))pending.push(new Promise((resolve,reject)=>{const style=document.createElement('link');style.rel='stylesheet';style.href='assets/refinement.css?v=alpha-final-20261030a';style.onload=resolve;style.onerror=()=>reject(Error('Refinement stylesheet unavailable'));document.head.append(style);}));
- if(typeof editorialMethods!=='function')pending.push(new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='assets/editorial.js?v=alpha-final-20261030a';script.onload=resolve;script.onerror=()=>reject(Error('Editorial presentation unavailable'));document.head.append(script);}));
+ if(typeof editorialMethods!=='function')pending.push(new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='assets/editorial.js?v=fem-closure-20261030a';script.onload=resolve;script.onerror=()=>reject(Error('Editorial presentation unavailable'));document.head.append(script);}));
  if(!document.querySelector('link[href^="assets/editorial.css"]'))pending.push(new Promise((resolve,reject)=>{const style=document.createElement('link');style.rel='stylesheet';style.href='assets/editorial.css?v=editorial-20261021a';style.onload=resolve;style.onerror=()=>reject(Error('Editorial stylesheet unavailable'));document.head.append(style);}));
  await Promise.all(pending);
 }
