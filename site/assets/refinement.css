@@ -33,3 +33,10 @@ a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible,
 /* Give the first national heading a clear line above the image; inset positions stay unchanged. */
 .national-plate>.map-surface>.map-label:first-of-type{top:0!important;transform:translateY(calc(-100% - 2px))}
 .hero-map .national-plate>.map-surface>.map-label:first-of-type{transform:translateY(calc(-100% - 14px))}
+
+/* Scoped finalization: readable class labels and shared scale guidance. */
+.comparison-scale-note{border-left:3px solid var(--accent);background:#F0ECEF;padding:14px 18px;margin:0 0 24px;font-size:14px;line-height:1.7}
+.comparison-scale-note p{margin:0 0 7px}.comparison-scale-note p:last-child{margin-bottom:0}
+.legend li.legend-precision{display:block;margin:12px 0;font-size:12px;line-height:1.65}.legend-precision details>summary{cursor:pointer;font-weight:600}.legend-precision ul{padding-left:18px}.legend-precision ul li{display:list-item;font-size:12px;overflow-wrap:anywhere}
+.legend li>span:last-child,.frequency-label>span:first-child{min-width:0;overflow-wrap:anywhere}.frequency-label{gap:12px}.frequency-label>span:last-child{flex-shrink:0}.mini-legend{row-gap:12px}
+.secondary-feedback,.legacy-feedback-note{font-size:13px;line-height:1.8}.feedback-page details>summary{cursor:pointer;font-weight:600}.feedback-page li{line-height:1.8}.site-footer>span:last-child{display:flex;flex-wrap:wrap;gap:0 7px}

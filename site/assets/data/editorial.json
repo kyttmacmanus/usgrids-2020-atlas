@@ -1,14 +1,14 @@
 {
   "schema": "usgrids-editorial-v1",
   "status": "PROVISIONAL_OWNER_SELECTED_NOT_ARCHIVE_REGISTERED",
-  "authors": ["Kytt MacManus", "Hieu Tran", "Juan Martinez", "Alex de Sherbinin", "Greg Yetman"],
+  "authors": ["Kytt MacManus", "Hieu Tran", "Juan F. Martinez", "Alex de Sherbinin", "Greg Yetman"],
   "dataset_title": "USGRIDS 2020: Gridded 2020 U.S. Census Demographic and Housing Counts and Land/Water Area at 15-Arc-Second Resolution",
   "dataset_citation": "MacManus, K., Tran, H., Martinez, J., de Sherbinin, A., & Yetman, G. (2026). USGRIDS 2020: Gridded 2020 U.S. Census Demographic and Housing Counts and Land/Water Area at 15-Arc-Second Resolution [Dataset, provisional citation]. Center for Integrated Earth System Information (CIESIN), Columbia University. Harvard Dataverse (publication pending).",
-  "atlas_citation": "MacManus, K. (2026). USGRIDS 2020 Scientific Atlas [Interactive web atlas, scientific review preview]. Center for Integrated Earth System Information (CIESIN), Columbia University. https://kyttmacmanus.github.io/usgrids-2020-atlas/",
+  "atlas_citation": "MacManus, K. (2026). USGRIDS 2020 Scientific Atlas [Interactive web atlas, alpha release]. Center for Integrated Earth System Information (CIESIN), Columbia University. https://kyttmacmanus.github.io/usgrids-2020-atlas/",
   "funding": "The preparation, validation, and dissemination of USGRIDS 2020 were supported in part by the Columbia University Research Stabilization Fund (Round 2).",
   "publication_status": "Proposed dataset citation available; Harvard Dataverse publication and DOI pending.",
-  "download_status": "Scientific files are being prepared for publication in Harvard Dataverse; downloads are not yet available.",
-  "feedback_url": "https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=scientific_review.yml",
+  "download_status": "Scientific data release in preparation; Harvard Dataverse downloads are not yet available.",
+  "feedback_url": "https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=atlas_feedback.yml",
   "categories": {
     "Population and Age": ["TOTALPOP", "AUND1", "A1TO4", "A5TO17", "A18TO24", "AUND25", "A25OV", "A25TO64", "A65TO79", "A80OV", "WOMCHILD"],
     "Race and Ethnicity": ["WHITE", "BLACK", "AMIND", "ASIAN", "HAWPI", "OTHER", "TWOMORE", "NHISP", "HISP", "NHISPWHITE", "NHISPBLACK"],
@@ -59,5 +59,6 @@
     {"group":"additional","g":"72","v":"AMIND","c":"local","label":"Puerto Rico American Indian and Alaska Native population","purpose":"Sparse allocations and interpretation alongside the documented limitations."},
     {"group":"additional","g":"NATIONAL","v":"WOMCHILD","c":"shared","label":"National female population ages 15–49","purpose":"An age-and-sex grouping and its authoritative definition."},
     {"group":"additional","g":"NATIONAL","v":"BLACK","c":"shared","label":"National Black or African American alone population","purpose":"Race, Hispanic-origin distinctions and Global classification."}
-  ]
+  ],
+  "historical_acknowledgments": "The original April 2025 CIESIN documentation acknowledged development support from the World Resources Institute’s Center for Urban Transitions and NASA contract 80GSFC23CA001 for SEDAC, and cited IPUMS NHGIS Version 18.0. Those historical acknowledgments are retained as provenance; their precise relationship to the corrected release and final institutional wording remain for confirmation."
 }

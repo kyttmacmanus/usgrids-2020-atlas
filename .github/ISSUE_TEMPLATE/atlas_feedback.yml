@@ -1,0 +1,48 @@
+name: USGRIDS atlas feedback
+description: Report a scientific, documentation, map, website or accessibility concern, or suggest an improvement
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: "GitHub Issues are publicly visible. Do not include confidential information or unpublished sensitive material in a public issue."
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feedback category
+      options:
+        - Scientific data concern
+        - Documentation correction
+        - Map or classification issue
+        - Website or accessibility problem
+        - Feature suggestion
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: selection
+    attributes:
+      label: Exact selected map or page URL
+      description: Copy the full page URL. For maps, select geography, variable and classification first; identify both comparison panels where relevant.
+    validations:
+      required: true
+  - type: input
+    id: selection_context
+    attributes:
+      label: Geography, variable and classification (if relevant)
+      description: Optional for feedback unrelated to a map. Include both panels for comparisons.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Observed and expected behavior
+      description: Explain what happened, what you expected, and steps to reproduce it.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Supporting evidence, impact and suggested correction
+      description: Screenshots, source references and browser/device or assistive-technology details help where relevant.
+  - type: input
+    id: reviewer
+    attributes:
+      label: Name and date (optional)

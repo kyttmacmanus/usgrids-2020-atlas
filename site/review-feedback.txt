@@ -1,18 +1,16 @@
-USGRIDS 2020 — SCIENTIFIC REVIEW FEEDBACK
+USGRIDS 2020 — Feedback & Corrections
 
-Review category: release-blocking scientific/rights issue | usability/design concern | future enhancement
-Short title:
-Page or feature: Explorer | Compare Maps | Methods | Data Access | Scientific Review Guide | other
-Exact selected map or page URL (include g/v/c or both comparison selections where relevant):
-Geography / variable / classification, if relevant:
-Device / browser / viewport, if relevant:
-Observed result:
+Category: Scientific data concern / Documentation correction / Map or classification issue / Website or accessibility problem / Feature suggestion / Other
+Exact selected map or page URL:
+Geography, variable and classification (if relevant; both panels for a comparison):
+Observed behavior:
 Expected behavior:
+Steps to reproduce:
 Scientific or usability impact:
-Supporting evidence (screenshot, source reference or steps to reproduce):
+Supporting evidence (screenshots, references):
 Suggested correction:
-Reviewer name / date (optional):
+Name and date (optional):
 
-Proposed dataset citation available; Harvard Dataverse publication and DOI pending.
-Share this completed template with the owner through your usual review channel.
-This website does not automatically submit or send your feedback.
+Submit through https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=atlas_feedback.yml (GitHub account required).
+GitHub Issues are publicly visible. Do not include confidential information or unpublished sensitive material in a public issue.
+Downloading or completing this file does not automatically submit or transmit feedback. Share it through an existing communication channel you already use with the project if you do not use GitHub. No private submission service is provided by this website.

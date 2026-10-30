@@ -2,7 +2,7 @@
 from pathlib import Path
 import json,hashlib,collections,re
 ROOT=Path(__file__).resolve().parents[1]
-AUTHORS=['Kytt MacManus','Hieu Tran','Juan Martinez','Alex de Sherbinin','Greg Yetman']
+AUTHORS=['Kytt MacManus','Hieu Tran','Juan F. Martinez','Alex de Sherbinin','Greg Yetman']
 FUNDING='The preparation, validation, and dissemination of USGRIDS 2020 were supported in part by the Columbia University Research Stabilization Fund (Round 2).'
 PREFIX='MacManus, K., Tran, H., Martinez, J., de Sherbinin, A., & Yetman, G. (2026). '
 
@@ -17,14 +17,14 @@ def verify(site=None):
         assert hashlib.sha256(data).hexdigest()==expected,rel
     assert len([p for p in lock['assets'] if p.startswith('site/assets/data/class-values/')])==32
     js=(site/'assets/site.js').read_text('utf8');home=js[js.index('function home(){'):js.index('function explorer(){')]
-    approved_home=home.replace("${classificationName('fixed')}",'Fixed count classes')
-    assert hashlib.sha256(approved_home.encode()).hexdigest()==lock['homepage_function_sha256'],'Homepage content/layout changed beyond authorized classification label'
+    finalization=load(ROOT/'tools/alpha_finalization_lock.json')
+    assert hashlib.sha256(home.encode()).hexdigest()==finalization['new_homepage_function_sha256'],'Homepage changed beyond scoped metric resolution and legend wording'
     assert e['authors']==AUTHORS and e['funding']==FUNDING
     assert e['dataset_citation']==PREFIX+e['dataset_title']+' [Dataset, provisional citation]. Center for Integrated Earth System Information (CIESIN), Columbia University. Harvard Dataverse (publication pending).'
     assert e['status']=='PROVISIONAL_OWNER_SELECTED_NOT_ARCHIVE_REGISTERED'
     assert e['publication_status']=='Proposed dataset citation available; Harvard Dataverse publication and DOI pending.'
-    assert e['download_status']=='Scientific files are being prepared for publication in Harvard Dataverse; downloads are not yet available.'
-    assert 'scientific review preview' in e['atlas_citation'] and e['atlas_citation'].startswith('MacManus, K. (2026). ')
+    assert e['download_status']=='Scientific data release in preparation; Harvard Dataverse downloads are not yet available.'
+    assert 'Interactive web atlas, alpha release' in e['atlas_citation'] and e['atlas_citation'].startswith('MacManus, K. (2026). ')
     category_vars=[v for vs in e['categories'].values() for v in vs]
     assert len(category_vars)==len(set(category_vars))==31 and set(category_vars)==set(a['variables'])==set(e['descriptions'])
     assert list(e['categories'])==['Population and Age','Race and Ethnicity','Households and Housing','Land and Water Area']
@@ -61,18 +61,21 @@ def verify(site=None):
     assert 1643+53+len(grouped)==1748
     assert all(f.get('download_url') is None and f['repository_status']=='PENDING_REGISTRATION' for f in files)
     assert "f.repository_status==='REGISTERED'" in code and 'dataverse\\.harvard\\.edu' in code
-    assert e['feedback_url']=='https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=scientific_review.yml'
+    assert e['feedback_url']=='https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=atlas_feedback.yml'
     for f in ['ALEX_REVIEW_GUIDE.md','docs/PUBLICATION_GUIDANCE.md']:
-        text=(ROOT/f).read_text('utf8');assert e['dataset_citation'] in text and FUNDING in text and '; '.join(AUTHORS) in text
+        text=(ROOT/f).read_text('utf8')
+        names='; '.join(AUTHORS)
+        if f=='ALEX_REVIEW_GUIDE.md':names=names.replace('Juan F. Martinez','Juan Martinez')  # Retained historical guide.
+        assert e['dataset_citation'] in text and FUNDING in text and names in text
     template=(site/'review-feedback.txt').read_text('utf8');assert 'does not automatically' in template
-    for field in ['Review category','Exact selected map or page URL','Observed','Expected','impact','Supporting evidence','Suggested correction','optional']:assert field in template
+    for field in ['Category','Exact selected map or page URL','Observed','Expected','impact','Supporting evidence','Suggested correction','optional']:assert field in template
     issue=(ROOT/'.github/ISSUE_TEMPLATE/scientific_review.yml').read_text('utf8')
-    for feature in ['Compare Maps','Science & Methods','Data Access','Scientific Review Guide']:assert feature in issue
+    for feature in ['Scientific data concern','Documentation correction','Map or classification issue','Website or accessibility problem','Feature suggestion']:assert feature in issue
     layers={key:layer for rel in a['layer_partitions'].values() for key,layer in load(site/rel).items()}
     assert len(e['review_cases'])==10 and sum(c['group']=='core' for c in e['review_cases'])==5
     for case in e['review_cases']:assert case['c'] in layers[case['g']+'_'+case['v']]['modes']
     for p in site.glob('*.html'):
         html=p.read_text('utf8');assert html.count('assets/editorial.js?')==1 and html.count('assets/editorial.css?')==1
         assert html.index('assets/editorial.js?')<html.index('assets/site.js?')
-    return {'status':'PASS','dictionary_variables':31,'category_coverage':'31/31','logical_products':1748,'physical_files':1956,'geotiff':1643,'netcdf':53,'complete_shapefile_sets':52,'shapefile_components':260,'derived_statistics_files_unchanged':32,'approved_homepage_function_unchanged':True,'author_order':AUTHORS,'exact_funding_sentence':True,'manual_workflow_unchanged':True,'scientific_processing':False}
+    return {'status':'PASS','dictionary_variables':31,'category_coverage':'31/31','logical_products':1748,'physical_files':1956,'geotiff':1643,'netcdf':53,'complete_shapefile_sets':52,'shapefile_components':260,'derived_statistics_files_unchanged':32,'homepage_scoped_metric_resolution_and_legend_update':True,'author_order':AUTHORS,'exact_funding_sentence':True,'manual_workflow_unchanged':True,'scientific_processing':False}
 if __name__=='__main__':print(json.dumps(verify(),indent=2))

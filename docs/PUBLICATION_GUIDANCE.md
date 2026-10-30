@@ -1,10 +1,10 @@
 # USGRIDS website publication guidance
 
-This editorial guidance applies to the existing scientific review website. It does not alter the frozen scientific release or the separate Dataverse preparation stream.
+This editorial guidance applies to the scientific atlas. It does not alter the frozen scientific release or the separate Dataverse preparation stream.
 
 ## Provisional dataset citation
 
-Owner-selected author order: Kytt MacManus; Hieu Tran; Juan Martinez; Alex de Sherbinin; Greg Yetman.
+Owner-selected author order: Kytt MacManus; Hieu Tran; Juan F. Martinez; Alex de Sherbinin; Greg Yetman.
 
 MacManus, K., Tran, H., Martinez, J., de Sherbinin, A., & Yetman, G. (2026). USGRIDS 2020: Gridded 2020 U.S. Census Demographic and Housing Counts and Land/Water Area at 15-Arc-Second Resolution [Dataset, provisional citation]. Center for Integrated Earth System Information (CIESIN), Columbia University. Harvard Dataverse (publication pending).
 
@@ -14,7 +14,7 @@ The proposed 2026 citation year remains provisional and is distinct from the 202
 
 ## Interactive atlas citation
 
-MacManus, K. (2026). USGRIDS 2020 Scientific Atlas [Interactive web atlas, scientific review preview]. Center for Integrated Earth System Information (CIESIN), Columbia University. https://kyttmacmanus.github.io/usgrids-2020-atlas/
+MacManus, K. (2026). USGRIDS 2020 Scientific Atlas [Interactive web atlas, alpha release]. Center for Integrated Earth System Information (CIESIN), Columbia University. https://kyttmacmanus.github.io/usgrids-2020-atlas/
 
 ## Funding and Acknowledgments
 
@@ -22,7 +22,7 @@ The preparation, validation, and dissemination of USGRIDS 2020 were supported in
 
 ## Editorial source of truth
 
-`site/assets/data/editorial.json` supplies the author order, both citations, funding sentence, publication status, dictionary browsing categories and review cases. Methods, Data Access and the public Review Guide use the same configuration. Do not edit frozen scientific metadata to establish provisional editorial credit.
+`site/assets/data/editorial.json` supplies the author order, both citations, funding sentence, publication status, dictionary browsing categories and review cases. Methods, Data Access and the public Feedback & Corrections page use the same configuration. Do not edit frozen scientific metadata to establish provisional editorial credit.
 
 The existing scientific-documentation JSON retains historical scientific records and their checksums. Publication-status language embedded in retained source records is historical; this guidance supplies current editorial status without changing those protected records.
 
@@ -42,14 +42,20 @@ Read-only evidence reviewed: frozen corrected-release documentation/METHODS.md a
 
 ## Review and feedback
 
-Public review guide: https://kyttmacmanus.github.io/usgrids-2020-atlas/review.html
+Feedback & Corrections: https://kyttmacmanus.github.io/usgrids-2020-atlas/feedback.html
 
 Compare maps: https://kyttmacmanus.github.io/usgrids-2020-atlas/compare.html
 
-Primary feedback: https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=scientific_review.yml (GitHub account required).
+Primary feedback: https://github.com/kyttmacmanus/usgrids-2020-atlas/issues/new?template=atlas_feedback.yml (GitHub account required).
 
 Alternative: https://kyttmacmanus.github.io/usgrids-2020-atlas/review-feedback.txt — download, complete, and share through the reviewer's own channel. No automatic feedback or invitation is sent.
 
 ## Verification
 
-Run `python tools/verify_site.py`. Its existing original-scientific-asset lock is unchanged. The editorial preservation lock protects the derived-statistics JSON, original CSS, main stylesheet, logo/favicon and exact manual deployment workflow. The owner-authorized usability refinement updates presentation code under a recorded scoped exception; the additional refinement lock retains every pre-existing scientific/editorial JSON file and map, the original scientific verification functions and exact chart-bin renderer. Homepage content/layout remains identical after normalizing its approved classification-label change. Browser checks and before/after screenshots accompany the private review handback.
+Run `python tools/verify_site.py`. Its original scientific-asset lock and historical lock records are unchanged. Scoped editorial presentation exceptions are recorded separately in `tools/alpha_finalization_lock.json`; they do not relax scientific hashes, statistics, masks, numeric intervals or the exact manual deployment workflow. The current suite checks the scientific catalog, source records, classification summaries, accessible feedback architecture, qualified publication status and current editorial requirements.
+
+## 30 October 2026 finalization
+
+Home → Explore Maps → Data Access → Science & Methods. Feedback is linked in every footer and contextually from Data Access, Methods and Documentation. review.html and its existing fragments remain meaningful compatibility links. Both issue-template URLs remain usable; neither submits automatically.
+
+The original scientific locks remain unchanged. tools/alpha_finalization_lock.json records scoped presentation exceptions for metric-resolution wording, readable legend labels, current editorial citation/feedback configuration, and the WOMCHILD/FEMW18CHILD clarification. Map composition, numeric bins, masks, all scientific JSON and exact deployment workflow remain protected.

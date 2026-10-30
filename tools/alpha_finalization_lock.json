@@ -1,0 +1,27 @@
+{
+  "baseline_commit": "08d93bb42ac1a2dcf3ebc082adcc52fb0a755fcb",
+  "authorization": "Owner brief dated 30 October 2026; scoped editorial, legends, feedback architecture and approximate metric resolution. Exact-commit deployment approval remains required.",
+  "presentation_function_exceptions": {
+    "classificationNote": {
+      "baseline_sha256": "c7cd4137e10c2814fd819fd883197fdea2ac7ed4e10064360370c68cea1d1c87",
+      "current_sha256": "d483f71cfcc0696eb69e4db3162dad6ad05d58220a9c195cfff7609c804ae6c4"
+    },
+    "legendMarkup": {
+      "baseline_sha256": "a5adcf2875b535adea4a6ececeae55506d7dcdad06aef09ce78e0989a034f30c",
+      "current_sha256": "495e80c1d7a11548821d96a6b58bd65aee2be7b33f231e832c45e5ee984194ac"
+    }
+  },
+  "editorial_json_exception": {
+    "baseline_sha256": "2bc58de1511fe64feae1515176147011f3d64d6fd9fc64a2a9d98b0dd4cc0b4a",
+    "current_sha256": "7f2d05595abeb55ae2b0d239037505348b0ad0c696ddd7e2990fc67c06738ac5"
+  },
+  "new_homepage_function_sha256": "f041f669be16a951b3c534b02b3a8c32f999a02f95b1b5d296551540e62f4e19",
+  "distribution_renderer_exception": {
+    "baseline_sha256": "444b799582f334858846e6524fa4a04716f5b406b9219b3cfd9494dadbbb61c1",
+    "current_sha256": "9e7387cae23c4af4265e32fd5c3acaa0aa5f27faea75257f29086318a1074d73"
+  },
+  "historical_definition_clarification": {
+    "before": "<p>Historical-input and runtime limitations preclude a universal bitwise reproduction claim. Exact historical PIXEL_LAND identity was not attained; approved practical scientific-equivalence results and stricter diagnostics are retained. FEMW18CHILD is excluded as a duplicate; no substitute is introduced.</p>",
+    "after": "<p>A historical FEMW18CHILD output was excluded from the 2026 canonical release because its produced raster values duplicated WOMCHILD. This finding concerns the produced data layer; it does not establish that the two variable names originally represented the same demographic concept. WOMCHILD in the released dataset denotes females ages 15–49, using SUM(P12_030N:P12_039N), and is not a count of mothers. The intended historical FEMW18CHILD source definition has not been verified.</p>"
+  }
+}

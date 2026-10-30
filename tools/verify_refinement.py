@@ -43,12 +43,19 @@ def luminance(color):
 def contrast(fg,bg):
     a,b=sorted([luminance(fg),luminance(bg)]);return (b+.05)/(a+.05)
 def verify(site=None):
-    site=site or SITE;lock=load(ROOT/'tools/refinement_asset_lock.json')
-    for rel,expected in lock['assets'].items():assert hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()==expected,rel
+    site=site or SITE;lock=load(ROOT/'tools/refinement_asset_lock.json');finalization=load(ROOT/'tools/alpha_finalization_lock.json')
+    for rel,expected in lock['assets'].items():
+        if rel=='site/assets/data/editorial.json':
+            exception=finalization['editorial_json_exception'];assert expected==exception['baseline_sha256'];expected=exception['current_sha256']
+        assert hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()==expected,rel
     for rel,functions in lock['protected_functions'].items():
         text=(ROOT/rel).read_text('utf8')
-        for name,expected in functions.items():assert checksum(function_text(text,name))==expected,rel+':'+name
-    helper=(site/'assets/explorer-tools.js').read_text('utf8');assert checksum(next(line for line in helper.splitlines() if "$('#frequency-rows').innerHTML=" in line))==lock['distribution_bin_renderer_sha256']
+        for name,expected in functions.items():
+            if name in finalization['presentation_function_exceptions']:
+                exception=finalization['presentation_function_exceptions'][name];assert expected==exception['baseline_sha256'];expected=exception['current_sha256']
+            assert checksum(function_text(text,name))==expected,rel+':'+name
+    helper=(site/'assets/explorer-tools.js').read_text('utf8');assert checksum(next(line for line in helper.splitlines() if "$('#frequency-rows').innerHTML=" in line))==finalization['distribution_renderer_exception']['current_sha256']
+    assert lock['distribution_bin_renderer_sha256']==finalization['distribution_renderer_exception']['baseline_sha256']
     assert "fixed:'Fixed classes',local:'Local quintiles',shared:'Global quintiles'" in helper
     assert "p.get('d')||'values'" in helper and 'd:selected.distribution' in helper
     assert 'Find data for this map' in helper and 'Compare maps ↗' in helper and 'id="compare-return"' in helper
@@ -58,7 +65,7 @@ def verify(site=None):
     for color in ['#29334B','#77395B','#D2A15E','#FAF7F3']:assert color in css
     assert not re.search(r'--swatch\s*:',css) and 'background:var(--map-panel)' in css
     assert 'Local positive quintiles' not in helper and 'Global positive quintiles' not in helper and 'Fixed count classes' not in helper
-    assert 'GitHub Issues are publicly visible. Please submit confidential concerns about rights, attribution, or unpublished material directly to the dataset authors.' in editorial
+    assert 'GitHub Issues are publicly visible. Do not include confidential information or unpublished sensitive material in a public issue.' in editorial
     assert 'href="assets/data/scientific-documentation.json"' not in editorial
     sources=load(site/'assets/data/scientific-documentation.json');source_lock=load(ROOT/'tools/documentation_source_lock.json');doc=(site/'documentation.html').read_text('utf8');parsed=SourceText();parsed.feed(doc)
     assert set(parsed.records)==set(sources) and len(parsed.ids)==len(set(parsed.ids))
@@ -73,5 +80,5 @@ def verify(site=None):
     ratios=[{'role':name,'foreground':fg,'background':bg,'ratio':contrast(fg,bg),'minimum':minimum,'status':'PASS' if contrast(fg,bg)>=minimum else 'FAIL'} for name,fg,bg,minimum in pairs];assert all(p['status']=='PASS' for p in ratios)
     for p in site.glob('*.html'):
         page=p.read_text('utf8');assert page.count('assets/refinement.js?')==1 and page.count('assets/refinement.css?')==1
-    return {'status':'PASS','protected_preexisting_assets':len(lock['assets']),'map_images_unchanged':4823,'derived_statistics_files_unchanged':32,'editorial_citation_configuration_unchanged':True,'curated_records_rendered_without_content_loss':4,'curated_source_characters':sum(len(v['text']) for v in sources.values()),'dictionary_rows':31,'native_geography_rows':53,'reconciliation_note_preserved':True,'shared_information_types':8,'ui_contrast_checks':ratios,'scientific_processing':False}
+    return {'status':'PASS','protected_preexisting_assets':len(lock['assets']),'map_images_unchanged':4823,'derived_statistics_files_unchanged':32,'scoped_editorial_citation_and_feedback_configuration':True,'curated_records_rendered_without_content_loss':4,'curated_source_characters':sum(len(v['text']) for v in sources.values()),'dictionary_rows':31,'native_geography_rows':53,'reconciliation_note_preserved':True,'shared_information_types':8,'ui_contrast_checks':ratios,'scientific_processing':False}
 if __name__=='__main__':print(json.dumps(verify(),indent=2))
