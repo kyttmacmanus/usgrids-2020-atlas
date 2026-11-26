@@ -1,0 +1,32 @@
+variable,artifact_variable,measure,category,source_expression,universe,units,source_urls
+TOTALPOP,TOTALPOP_CNT,Total population,population,P1_001N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P1.html
+AUND1,AUND1_CNT,Population under age 1,age,P14_003N+P14_024N,Population under 20 years,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P14.html
+A1TO4,A1TO4_CNT,Population ages 1–4,age,SUM(P14_004N:P14_007N)+SUM(P14_025N:P14_028N),Population under 20 years,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P14.html
+A5TO17,A5TO17_CNT,Population ages 5–17,age,SUM(P14_008N:P14_020N)+SUM(P14_029N:P14_041N),Population under 20 years,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P14.html
+A18TO24,A18TO24_CNT,Population ages 18–24,age,SUM(P12_007N:P12_010N)+SUM(P12_031N:P12_034N),Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+AUND25,AUND25_CNT,Population under age 25,age,SUM(P14_003N:P14_020N)+SUM(P14_024N:P14_041N)+SUM(P12_007N:P12_010N)+SUM(P12_031N:P12_034N),Total population ages under 25,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html|https://api.census.gov/data/2020/dec/dhc/groups/P14.html
+A25OV,A25OV_CNT,Population age 25 and older,age,SUM(P12_011N:P12_025N)+SUM(P12_035N:P12_049N),Total population ages 25 and over,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+A25TO64,A25TO64_CNT,Population ages 25–64,age,SUM(P12_011N:P12_019N)+SUM(P12_035N:P12_043N),Total population ages 25 to 64,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+A65TO79,A65TO79_CNT,Population ages 65–79,age,SUM(P12_020N:P12_023N)+SUM(P12_044N:P12_047N),Total population ages 65 to 79,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+A80OV,A80OV_CNT,Population age 80 and older,age,P12_024N+P12_025N+P12_048N+P12_049N,Total population ages 80 and over,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+WOMCHILD,WOMCHILD_CNT,Female population ages 15–49,age,SUM(P12_030N:P12_039N),Female population ages 15 to 49,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P12.html
+WHITE,WHITE_CNT,White alone population,race,P3_002N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+BLACK,BLACK_CNT,Black or African American alone population,race,P3_003N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+AMIND,AMIND_CNT,American Indian and Alaska Native alone population,race,P3_004N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+ASIAN,ASIAN_CNT,Asian alone population,race,P3_005N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+HAWPI,HAWPI_CNT,Native Hawaiian and Other Pacific Islander alone population,race,P3_006N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+OTHER,OTHER_CNT,Some other race alone population,race,P3_007N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+TWOMORE,TWOMORE_CNT,Two or more races population,race,P3_008N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P3.html
+NHISP,NHISP_CNT,Not Hispanic or Latino population,ethnicity,P4_002N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P4.html
+HISP,HISP_CNT,Hispanic or Latino population,ethnicity,P4_003N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P4.html
+NHISPWHITE,NHISPWHITE_CNT,"Not Hispanic or Latino, White alone",race_ethnicity,P9_005N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P9.html
+NHISPBLACK,NHISPBLACK_CNT,"Not Hispanic or Latino, Black alone",race_ethnicity,P9_006N,Total population,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P9.html
+HOUSEHOLD,HOUSEHOLD_CNT,Total households,household,P16_001N,Households,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/P16.html
+HHPOP,HHPOP_CNT,Population in occupied housing units,household_population,H8_001N,Population in occupied housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H8.html
+HHUNIT,HHUNIT_CNT,Total housing units,housing,H1_001N,Housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H1.html
+OCC,OCC_CNT,Occupied housing units,housing,H3_002N,Occupied housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H3.html
+OWN,OWN_CNT,Owner-occupied housing units,housing,H10_002N,Occupied housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H10.html
+VACANT,VACANT_CNT,Vacant housing units,housing,H3_003N; equivalent observed source H5_001N,Housing units; H5 universe is vacant housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H3.html|https://api.census.gov/data/2020/dec/dhc/groups/H5.html
+HU1P,HU1P_CNT,One-person occupied housing units,housing,H12_003N+H12_011N,Occupied housing units,counts/block; allocated counts/cell,https://api.census.gov/data/2020/dec/dhc/groups/H12.html
+PIXEL_LAND,PIXEL_LAND,Allocated land area,area,SUM by PIXELID of MAX(GEODESIC_KM2(intersection)-GEODESIC_KM2(intersection intersect water mask);0),Grid-cell intersections within processing boundary,km2/cell,https://www2.census.gov/geo/tiger/TIGER2022/AREAWATER/
+PIXEL_WATER,PIXEL_WATER,Allocated water area,area,SUM by PIXELID of GEODESIC_KM2(intersection intersect water mask),Grid-cell intersections within processing boundary,km2/cell,https://www2.census.gov/geo/tiger/TIGER2022/AREAWATER/

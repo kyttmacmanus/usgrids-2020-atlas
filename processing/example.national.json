@@ -1,0 +1,6 @@
+{
+  "kind": "national",
+  "layout": "component_maps",
+  "component_root": "completed_geographies",
+  "outdir": "national_2020"
+}

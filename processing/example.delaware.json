@@ -1,0 +1,9 @@
+{
+  "state": "10",
+  "source": "inputs/de_dhc_blocks.csv",
+  "blocks": "inputs/delaware.gdb/historical_blocks",
+  "geoid_field": "GEOID20",
+  "fishnet": "inputs/delaware.gdb/fishnet",
+  "water": {"mode": "prepared", "sources": ["inputs/de_water_layer.shp"]},
+  "outdir": "delaware_example_output"
+}

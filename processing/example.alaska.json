@@ -1,0 +1,14 @@
+{
+  "state": "02",
+  "source": "inputs/ak_dhc_blocks.csv",
+  "blocks": "inputs/usaak.gdb/usaak_admin5_boundaries",
+  "geoid_field": "GEOID20",
+  "fishnet": "inputs/alaska_sparse.gdb/ak_sparse_fishnet",
+  "alaska": {
+    "county_field": "COUNTYFP20",
+    "fishnet_kind": "polygons",
+    "grid_reference": "inputs/grids/ak_historical_land.tif"
+  },
+  "water": {"mode": "nationwide", "sources": ["inputs/tiger2022_water.shp"]},
+  "outdir": "alaska_output"
+}

@@ -1,0 +1,10 @@
+# Independently tested acquisition/restore environment: CPython 3.11.9, Windows x86-64.
+# Use the binary pyogrio wheel that bundles GDAL 3.12.4 / OpenFileGDB.
+# Do not load the GDAL library from Rasterio, an unrelated ArcGIS installation, or PATH.
+# Other OS builds must pass the native-WKB, precision and object-ID verification.
+numpy==2.4.6
+pyogrio==0.13.0
+shapely==2.1.2
+geopandas==1.1.4
+pandas==3.0.5
+pyproj==3.7.2
