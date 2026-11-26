@@ -1,0 +1,10 @@
+{
+  "state": "27",
+  "source": "inputs/mn_dhc_blocks.csv",
+  "blocks": "inputs/usamn.gdb/usamn_admin5_boundaries",
+  "geoid_field": "GEOID20",
+  "county_field": "COUNTYFP20",
+  "fishnet": "inputs/usamn_fishnet.gdb/usamn_fishnet",
+  "water": {"mode": "nationwide", "sources": ["inputs/tiger2022_water.shp"]},
+  "outdir": "minnesota_output"
+}

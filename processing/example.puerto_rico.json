@@ -1,0 +1,9 @@
+{
+  "state": "72",
+  "source": "inputs/pr_dhc_blocks.csv",
+  "blocks": "inputs/blocks_state_72.shp",
+  "geoid_field": "GEOID20",
+  "fishnet": "inputs/usapri_fishnet.gdb/usapri_fishnet",
+  "water": {"mode": "nationwide", "sources": ["inputs/tiger2022_water.shp"]},
+  "outdir": "puerto_rico_output"
+}

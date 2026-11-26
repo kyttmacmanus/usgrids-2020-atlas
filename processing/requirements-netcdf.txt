@@ -1,0 +1,5 @@
+# Separate open-source environment tested with Python 3.11.9 for the NetCDF step.
+# ArcPy is supplied by a licensed ArcGIS Pro installation, not by this file.
+numpy==2.4.6
+rasterio==1.4.4
+netCDF4==1.7.4

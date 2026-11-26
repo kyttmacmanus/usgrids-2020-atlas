@@ -1,0 +1,9 @@
+# Scientific credit and software licensing
+
+The dataset authors, in citation order, are **Kytt MacManus, Hieu Tran, Juan F. Martinez, Alex de Sherbinin, and Greg Yetman**. Hieu Tran wrote the May 2024 [historical USGRIDs processing scripts](https://github.com/ciesin-geospatial/USGRIDs/tree/0a3e4c87b9449369ccb67dd05f05ce4ffbbdcbc5). The current implementation carries forward the scientific methods and uses the production records for the corrected 2020 dataset; checking out the May 2024 repository alone does not recreate that release.
+
+The U.S. Census Bureau supplies the 2020 Demographic and Housing Characteristics File and the 2022 TIGER/Line area-water source. Earlier project work also drew on IPUMS NHGIS. Lina Montoya Restrepo is acknowledged for her review of the Scientific Atlas. These contributions are distinct from authorship of the Python source.
+
+**Software license status: proposed, not granted.** MIT is proposed for the project-owned code in this directory, subject to confirmation of the relevant rights and copyright holder. This notice does not grant a license. It does not apply MIT to the Scientific Atlas, scientific data, geometry, formal dataset documentation or third-party software. Consult the license or use terms accompanying each of those materials.
+
+The programs call [ArcPy supplied with licensed ArcGIS Pro](https://doc.esri.com/en/arcgis-pro/latest/get-started/licensing-arcgis-pro.html), [NumPy](https://numpy.org/doc/stable/license.html), [Rasterio](https://github.com/rasterio/rasterio/blob/main/LICENSE.txt), [netCDF4-Python](https://github.com/Unidata/netcdf4-python/blob/master/LICENSE) and, for restoring reference geometry, [Pyogrio](https://github.com/geopandas/pyogrio/blob/main/LICENSE) with GDAL. These dependencies are installed separately. The project does not supply their source, binaries, or redistribution rights.
